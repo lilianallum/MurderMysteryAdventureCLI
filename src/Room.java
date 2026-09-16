@@ -15,4 +15,12 @@ public class Room {
     public void addItemToRoomContents (Item item){
         contents.add(item);
     }
+
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public double getSizeSquareFeet() {
+        return sizeSquareFeet;
+    }
 }

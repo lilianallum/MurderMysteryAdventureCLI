@@ -1,16 +1,30 @@
 public class MurderMysteryAdventureCLI {
 
+
     public static void main (String[] args){
-
+        ReadText.printText("storyIntro.txt");
+        UserDecisions.continueStory();
+        NotePad murderNotes = new NotePad();
+        setUpDetective(murderNotes);
+        setUpVictim(murderNotes);
     }
 
-    public void setUpVictim(){
-        // story introduction with the murder
-        // Character victim info
+    public static void setUpDetective(NotePad murderNotes){
+        ReadText.printText("playerIntro.txt");
+        Character detectivePlayer = new Character();
+        detectivePlayer.setName("DI Jones");
+        detectivePlayer.setAge(51);
+        murderNotes.addCharacterToNotepad(detectivePlayer);
     }
 
-    public void setUpDetective(){
-        // introduce the player as the detective
-        // Character detective/player info
+    public static void setUpVictim(NotePad murderNotes){
+        ReadText.printText("discoverVictim.txt");
+        Character rosemary = new Character();
+        rosemary.setName("Lady Rosemary");
+        rosemary.setAge(32);
+        rosemary.setGender("Female");
+        rosemary.setRelationshipToVictim("Victim");
+        murderNotes.addCharacterToNotepad(rosemary);
     }
+
 }
